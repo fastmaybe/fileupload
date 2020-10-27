@@ -29,8 +29,8 @@ public class UploadController {
     @PostMapping("upload")
     public String upload(@RequestParam("readme") int type, @RequestParam("file") MultipartFile file){
 
-        System.out.println();
-       return uploadService.upload(file,type);
+        System.out.println(type);
+       return uploadService.upload(file,1);
 //        return "OK";
     }
     @GetMapping("/path")

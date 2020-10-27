@@ -2,19 +2,24 @@ package com.example.fileupload.config;
 
 import com.example.fileupload.Cons;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.util.ResourceUtils;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-
-import java.io.File;
-import java.io.FileNotFoundException;
 
 /**
  * @Author: liulang
  * @Date: 2020/10/23 11:19
  */
 @Configuration
+@SuppressWarnings("all")
 public class DYWebMvcConfigurer implements WebMvcConfigurer {
+
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/").setViewName("/upload1");
+        //  首先  / =>(addViewControllers)=> /upload.html  =>(addResourceHandlers)=>  /static/upload.html
+    }
 
 
     @Override

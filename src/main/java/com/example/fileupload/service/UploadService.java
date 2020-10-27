@@ -7,8 +7,6 @@ import org.springframework.util.ClassUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
-import java.net.*;
-import java.util.Enumeration;
 
 /**
  * @Author: liulang

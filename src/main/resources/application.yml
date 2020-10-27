@@ -6,4 +6,9 @@ server:
 spring:
   servlet:
     multipart:
-      max-file-size: 10MB
+      max-file-size: 300MB
+      max-request-size: 500MB
+  mvc:
+    view:
+      suffix: .html
+      prefix: /
