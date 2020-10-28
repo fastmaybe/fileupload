@@ -17,22 +17,25 @@
     <script type="text/javascript">
         function upload(){
             $("#f1").submit();
-            var pro=null;
-            pro=setInterval(function(){
-                $.get("upload","",function(data){
-                    if(data=='100%'){
-                        clearInterval(pro);
-                        $("#proInfo").text("上传进度：100%");
-                        //更新进度条
-                        $("#progress").width("100%");
-                    }else{//正在上传
-                        //更新进度信息
-                        $("#proInfo").text("上传进度："+data);
-                        //更新进度条
-                        $("#progress").width(data);
-                    }
-                });
-            },200);
+
+            var ws = new WebSocket("ws://localhost:8788/ws/progress");
+
+            ws.onopen = function (ev) {
+                console.log("ws连接成功")
+            };
+
+            ws.onmessage= function (ev) {
+                console.log(ev.data)
+                $("#proInfo").text("上传进度："+ev.data);
+                if (ev.data == '100%'){
+                    ws.close()
+                }
+            };
+
+            ws.onclose = function (ev) {
+                console.log("已断开ws")
+            }
+
         }
 
     </script>

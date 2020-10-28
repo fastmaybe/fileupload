@@ -2,6 +2,7 @@ package com.example.fileupload.config.upload;
 
 
 
+import com.example.fileupload.ws.WebSocketServer;
 import org.apache.commons.fileupload.ProgressListener;
 
 import javax.servlet.http.HttpServletRequest;
@@ -49,7 +50,10 @@ public class MyProgressListener implements ProgressListener {
 
 
         System.err.println(progress);
-        session.setAttribute("progress",progress);
+
+        WebSocketServer.sendInfo(progress);
+
+//        session.setAttribute("progress",progress);
 
     }
 
