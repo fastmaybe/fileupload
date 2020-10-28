@@ -17,7 +17,7 @@ public class DYWebMvcConfigurer implements WebMvcConfigurer {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("/upload1");
+        registry.addViewController("/").setViewName("/upload");
         //  首先  / =>(addViewControllers)=> /upload.html  =>(addResourceHandlers)=>  /static/upload.html
     }
 
