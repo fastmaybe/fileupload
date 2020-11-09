@@ -13,7 +13,7 @@ import java.io.FileNotFoundException;
  * @Author: liulang
  * @Date: 2020/10/23 11:19
  */
-@Configuration
+//@Configuration
 public class DYWebMvcConfigurer implements WebMvcConfigurer {
 
 

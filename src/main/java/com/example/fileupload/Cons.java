@@ -9,7 +9,7 @@ import java.io.File;
 @SuppressWarnings("all")
 public interface Cons {
 
-    public final String localPath = "G:/uploaddemo/";
+    public final String localPath = "E:/bigflie/";
     public final String resourceUpload = "classpath:/upload/";
     public final String resourceStatic = "classpath:/static/";
     public final String rootupload = "rootupload";

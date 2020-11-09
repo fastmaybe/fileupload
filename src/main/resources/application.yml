@@ -6,4 +6,22 @@ server:
 spring:
   servlet:
     multipart:
-      max-file-size: 10MB
+      max-file-size: 5MB
+      max-request-size: 100MB
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+    jedis:
+      pool:
+        max-idle: 10
+        max-active: 30
+        max-wait: 10000
+---
+breakpoint:
+  upload:
+    dir: E:/bigflie/
+    #1024*1024=1 048 576,5M=5 242 880
+    chunkSize: 5 242 880
+
